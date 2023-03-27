@@ -3,8 +3,12 @@ use std::path::Path;
 use anyhow::ensure;
 use toml_edit::*;
 
-pub fn sort_toml(path: &Path) -> anyhow::Result<()> {
-    eprintln!("TOML Sort {}",path.to_string_lossy());
+use crate::SorterArgs;
+
+pub fn sort_toml(path: &Path, args: SorterArgs) -> anyhow::Result<()> {
+    if args.verbose {
+        eprintln!("TOML Sort {}",path.to_string_lossy());
+    }
 
     ensure!(path.is_file());
 
@@ -16,10 +20,12 @@ pub fn sort_toml(path: &Path) -> anyhow::Result<()> {
 
     let result = format!("{}",&doc);
 
-    let _ = result.parse::<Document>()?;
-
     if result != data {
-        std::fs::write(path, result)?;
+        result.parse::<Document>()?;
+
+        if !args.noop {
+            std::fs::write(path, result)?;
+        }
     }
 
     Ok(())

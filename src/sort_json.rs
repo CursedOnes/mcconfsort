@@ -3,8 +3,12 @@ use std::path::Path;
 use anyhow::ensure;
 use serde_jsonrc::Value;
 
-pub fn sort_json(path: &Path) -> anyhow::Result<()> {
-    eprintln!("JSON Sort {}",path.to_string_lossy());
+use crate::SorterArgs;
+
+pub fn sort_json(path: &Path, args: SorterArgs) -> anyhow::Result<()> {
+    if args.verbose {
+        eprintln!("JSON Sort {}",path.to_string_lossy());
+    }
 
     ensure!(path.is_file());
 
@@ -16,10 +20,12 @@ pub fn sort_json(path: &Path) -> anyhow::Result<()> {
 
     let result = serde_jsonrc::to_vec_pretty(&json_value)?;
 
-    let _: Value = serde_jsonrc::from_slice(&result)?;
-
     if result != data {
-        std::fs::write(path, result)?;
+        let _: Value = serde_jsonrc::from_slice(&result)?;
+
+        if !args.noop {
+            std::fs::write(path, result)?;
+        }
     }
 
     Ok(())
