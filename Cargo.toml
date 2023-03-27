@@ -8,8 +8,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-toml_edit = { git = "https://github.com/qwertz19281/toml", rev = "f9cae372" }
-serde_jsonrc = { git = "https://github.com/qwertz19281/serde-jsonrc", rev = "dab008c8", features = ["preserve_order","arbitrary_precision"] }
+toml_edit = { git = "https://github.com/qwertz19281/toml", branch = "table_remove_position_v0.19" }
+serde_jsonrc = { git = "https://github.com/qwertz19281/serde-jsonrc", branch = "sortable_map_v0.1", features = ["preserve_order","arbitrary_precision"] }
 anyhow = "1"
 walkdir = "2.3"
 clap = { version = "4", features = ["derive"] }

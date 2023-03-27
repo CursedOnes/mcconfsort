@@ -237,7 +237,7 @@ checksum = "771d4d9c4163ee138805e12c710dd365e4f44be8be0503cb1bb9eb989425d9c9"
 [[package]]
 name = "serde_jsonrc"
 version = "0.1.95"
-source = "git+https://github.com/qwertz19281/serde-jsonrc?rev=dab008c8#dab008c8fb64a59c86a06c6594ad586f076c6733"
+source = "git+https://github.com/qwertz19281/serde-jsonrc?branch=sortable_map_v0.1#dab008c8fb64a59c86a06c6594ad586f076c6733"
 dependencies = [
  "indexmap",
  "itoa",
@@ -274,12 +274,12 @@ dependencies = [
 [[package]]
 name = "toml_datetime"
 version = "0.6.1"
-source = "git+https://github.com/qwertz19281/toml?rev=f9cae372#f9cae372528f14326f4fd88a8d0fdcb6bb51b989"
+source = "git+https://github.com/qwertz19281/toml?branch=table_remove_position_v0.19#f9cae372528f14326f4fd88a8d0fdcb6bb51b989"
 
 [[package]]
 name = "toml_edit"
 version = "0.19.8"
-source = "git+https://github.com/qwertz19281/toml?rev=f9cae372#f9cae372528f14326f4fd88a8d0fdcb6bb51b989"
+source = "git+https://github.com/qwertz19281/toml?branch=table_remove_position_v0.19#f9cae372528f14326f4fd88a8d0fdcb6bb51b989"
 dependencies = [
  "indexmap",
  "toml_datetime",
