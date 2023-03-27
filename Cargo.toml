@@ -1,13 +1,13 @@
-[workspace]
+[package]
+name = "mcconfsort"
+version = "0.1.1"
+license = "MIT OR Apache-2.0"
+edition = "2021"
 
-members = [
-    "mcconfsort",
-    "serde_jsonrc",
-    "toml_edit",
-    "toml_datetime",
-]
-resolver = "2"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[profile.release]
-codegen-units = 1
-lto = true
+[dependencies]
+toml_edit = { git = "https://github.com/qwertz19281/toml", rev = "f9cae372" }
+serde_jsonrc = { git = "https://github.com/qwertz19281/serde-jsonrc", rev = "dab008c8", features = ["preserve_order","arbitrary_precision"] }
+anyhow = "1"
+walkdir = "2.3"

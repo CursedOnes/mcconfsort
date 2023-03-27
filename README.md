@@ -1,4 +1,4 @@
-# mcconfsorter
+# mcconfsort
 
 Sort table entries inside .toml and .json files, recursively inside a directory.
 
@@ -9,5 +9,5 @@ This is made e.g. for Minecraft modpacks to help versioning configs, as the toml
 ## Install
 
 ```
-cargo install -f --git https://github.com/CursedOnes/mcconfsorter`
+cargo install -f --git https://github.com/CursedOnes/mcconfsort
 ```
