@@ -4,6 +4,7 @@ description = "Sort contents of JSON and TOML files, recursively inside a direct
 version = "0.2.0"
 license = "MIT OR Apache-2.0"
 edition = "2021"
+rust-version = "1.65"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
